@@ -1,4 +1,4 @@
-<h1 align="center">Pataky</h1>
+<h1 align="center">Nem szoktam commitolni :c</h1>
 
 ###
 
