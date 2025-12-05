@@ -1,25 +1,30 @@
-name: Generate Pacman Graph
+name: Generate Snake Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # minden nap éjfélkor fut
+    - cron: "0 0 * * *"  # every day at midnight
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Update Pacman Graph
-        uses: maurodesouza/pacman-contribution-graph@main
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: ptky
+          github_user_name: ptky
+          outputs: |
+            dist/pacman-contribution-graph.svg
+            dist/pacman-contribution-graph-dark.svg?palette=github-dark
 
       - name: Push to output branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Pacman commit"
+          commit_message: "Generate Snake Graph"
           branch: output
+          file_pattern: dist/*
