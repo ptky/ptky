@@ -1,0 +1,25 @@
+name: Generate Pacman Graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # minden nap éjfélkor fut
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update Pacman Graph
+        uses: maurodesouza/pacman-contribution-graph@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: ptky
+
+      - name: Push to output branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Pacman commit"
+          branch: output
