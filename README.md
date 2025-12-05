@@ -24,16 +24,8 @@
 ###
 
 <picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/ptky/ptky/output/pacman-contribution-graph-dark.svg"
-  >
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/ptky/ptky/output/pacman-contribution-graph.svg"
-  >
-  <img
-    alt="pacman contribution graph"
-    src="https://raw.githubusercontent.com/ptky/ptky/output/pacman-contribution-graph.svg"
-  >
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ptky/ptky/output/dist/snake_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ptky/ptky/output/dist/snake_light.svg">
+  <img alt="Snake animation" src="https://raw.githubusercontent.com/ptky/ptky/output/dist/snake_light.svg">
 </picture>
+
